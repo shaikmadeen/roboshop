@@ -30,7 +30,7 @@ VALIDATE(){
 
 dnf module disable nodejs -y &>> $LOGFILE
 
-VALIDATE $? "Disabling current NodeJS"
+VALIDATE $? "Disabling NodeJS"
 
 dnf module enable nodejs:18 -y  &>> $LOGFILE
 
