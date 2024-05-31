@@ -76,7 +76,7 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "user daemon reload"
 
-systemctl enable catalogue &>> $LOGFILE
+systemctl enable user &>> $LOGFILE
 
 VALIDATE $? "Enable user"
 
