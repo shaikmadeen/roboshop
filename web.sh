@@ -40,6 +40,8 @@ systemctl start nginx &>> $LOGFILE
 
 VALIDATE $? "Starting nginx"
 
+http://18.215.177.120:80
+
 rm -rf /usr/share/nginx/html/* &>> $LOGFILE
 
 VALIDATE $? "Removed default website"
