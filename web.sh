@@ -40,7 +40,7 @@ systemctl start nginx &>> $LOGFILE
 
 VALIDATE $? "Starting nginx"
 
-http://3.85.129.149:80
+http://52.23.169.201:80
 
 rm -rf /usr/share/nginx/html/* &>> $LOGFILE
 
