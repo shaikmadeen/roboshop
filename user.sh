@@ -92,6 +92,6 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB client"
 
-mongo --host 10.0.1.238 </app/schema/user.js &>> $LOGFILE
+mongo --host 10.0.1.167 </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? "Loading user data into MongoDB"
