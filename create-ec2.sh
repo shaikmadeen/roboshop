@@ -8,7 +8,7 @@ DOMAIN_NAME="devops.online"
 
 for i in "${INSTANCES[@]}"
 do
-    if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
+    if [[ $i == "mongodb" || $i == "mysql" ]]
     then
         INSTANCE_TYPE="t3.small"
     else
