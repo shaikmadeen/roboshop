@@ -2,7 +2,7 @@
 
 AMI=ami-0b4f379183e5706b9 #this keeps on changing
 SG_ID=sg-011403b343fdfa7c9 #replace with your SG ID
-INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" #"payment" "dispatch" "web")
+INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping") #"payment" "dispatch" "web"
 ZONE_ID=Z04800941MANNORN4ZXRP # replace your zone ID
 DOMAIN_NAME="devops.online"
 
