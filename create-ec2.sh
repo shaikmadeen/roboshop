@@ -1,6 +1,7 @@
 #!/bin/bash
 
-VPC_ID=vpc-0ed1637b4cc917507
+VPC_ID= "vpc-0ed1637b4cc917507"
+subnet= "subnet-0baf512e9444bded6"
 AMI=ami-0b4f379183e5706b9 #this keeps on changing
 SG_ID=sg-011403b343fdfa7c9 #replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping") #"payment" "dispatch" "web"
@@ -16,7 +17,7 @@ do
         INSTANCE_TYPE="t2.micro"
     fi
 
-    IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --vpc-id $VPC_ID --instance-type $INSTANCE_TYPE --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
+    IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $INSTANCE_TYPE --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
     echo "$i: $IP_ADDRESS"
 
     #create R53 record, make sure you delete existing record
